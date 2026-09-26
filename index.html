@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>MDT Loop · ENT — חומרי המחקר</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --ink: #0f172a; --sec: #475569; --mut: #64748b;
+    --line: #e2e8f0; --blue: #137fec; --blueWash: #eaf3fe; --warn: #92400e; --warnWash: #fef3c7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b1119; --card: #121a25; --ink: #f1f5f9; --sec: #cbd5e1; --mut: #94a3b8;
+      --line: #1f2a37; --blue: #4ea1ff; --blueWash: #10233b; --warn: #fcd34d; --warnWash: #2a2111;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.55 "Heebo", "Segoe UI", "Arial Hebrew", Arial, system-ui, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 56px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand svg { flex: none; color: var(--blue); }
+  h1 { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -.01em; }
+  .ed { font: 700 12px/1 system-ui, sans-serif; letter-spacing: .3em; color: var(--blue); }
+  .lede { color: var(--sec); margin: 14px 0 0; }
+  .note {
+    margin: 18px 0 0; padding: 12px 14px; border-radius: 12px;
+    background: var(--warnWash); color: var(--warn); font-size: 14px;
+  }
+  h2 { font-size: 13px; font-weight: 700; color: var(--mut); letter-spacing: .04em; margin: 32px 0 10px; }
+  .hero {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 20px; border-radius: 16px; background: #137fec; color: #fff; text-decoration: none;
+  }
+  .hero b { display: block; font-size: 20px; }
+  .hero span { opacity: .9; font-size: 14px; }
+  .hero i { font-style: normal; font-size: 26px; flex: none; }
+  .list { display: grid; gap: 10px; }
+  .item {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--card);
+  }
+  .item .t { font-weight: 700; }
+  .item .d { color: var(--mut); font-size: 14px; }
+  .btns { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 7px 12px; border-radius: 999px; text-decoration: none;
+    font-size: 14px; font-weight: 600; background: var(--blueWash); color: var(--blue);
+  }
+  .btn:focus-visible, .hero:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+  footer { margin-top: 40px; color: var(--mut); font-size: 13px; }
+  bdi { unicode-bidi: isolate; }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">
+    <svg width="44" height="20" viewBox="9.5 6 45 20" fill="none" aria-hidden="true">
+      <path d="M32 16C32 6 12 6 12 16C12 26 32 26 32 16C32 6 52 6 52 16C52 26 32 26 32 16Z" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div>
+      <h1><bdi>MDT Loop</bdi></h1>
+      <div class="ed">ENT</div>
+    </div>
+  </div>
+
+  <p class="lede">
+    קיצור המרווח שבין האבחנה לטיפול בסרטן ראש-צוואר — מחקר פיילוט במתכונת מערכת צל.
+    ד״ר אביב דניאל · מחלקת אף אוזן גרון וכירורגיית ראש-צוואר · מרכז רפואי מאיר, כפר סבא.
+  </p>
+
+  <p class="note">
+    גרסת הדגמה: כל הנתונים באפליקציה ובגיליון הסימולציה סינתטיים. המערכת אינה מחוברת לשום
+    רשומה רפואית ואינה מיועדת לשימוש קליני עד לאישור ועדת הלסינקי ואבטחת המידע של כללית.
+  </p>
+
+  <h2>האפליקציה</h2>
+  <a class="hero" href="app.html">
+    <span><b>פתיחת <bdi>MDT Loop · ENT</bdi></b><span>עובדת בדפדפן, בנייד ובמחשב · בתוכה: סימולציה של 20 מטופלים</span></span>
+    <i aria-hidden="true">←</i>
+  </a>
+
+  <p class="note" style="margin-top:10px">
+    <strong>מצב שימוש.</strong> מתוך ״עוד ← מצב העבודה״ אפשר לפתוח לוח ריק לשימוש אמיתי.
+    הוא נפתח רק לאחר רישום מספר אישור ועדת הלסינקי ומספר אישור אבטחת המידע של כללית,
+    ואישור מפורש של ארבעה סעיפים. במצב הזה אין סימולציה, אין איפוס, מספרי המחקר מקודדים
+    ונעולים, והלוח נשמר בדפדפן שבו הוא נפתח בלבד — הרשומה שהמחקר נשען עליה היא גיליון
+    איסוף הנתונים במחשב כללית.
+  </p>
+
+  <div class="list" style="margin-top:10px">
+    <div class="item">
+      <div><div class="t">סרטון הדגמה — המהלך המלא</div><div class="d">מטופל חדש · שאלה בין דיסציפלינות · טומור בורד · סגירת לולאה · מדידת הימים עד הטיפול · דקה וחצי</div></div>
+      <div class="btns">
+        <a class="btn" href="materials/MDT-Loop-ENT-demo.mp4">צפייה · <bdi>MP4</bdi></a>
+      </div>
+    </div>
+  </div>
+
+  <h2>המצגת</h2>
+  <div class="list">
+    <div class="item">
+      <div><div class="t">מצגת — 17 שקפים</div><div class="d">כולל הערות דובר בקובץ ה־<bdi>PowerPoint</bdi></div></div>
+      <div class="btns">
+        <a class="btn" href="materials/MDT-Loop-ENT-presentation.pdf">צפייה · <bdi>PDF</bdi></a>
+        <a class="btn" href="materials/MDT-Loop-ENT-presentation.pptx" download>הורדה · <bdi>PPTX</bdi></a>
+      </div>
+    </div>
+    <div class="item">
+      <div><div class="t">מסמך מקור למצגת</div><div class="d">לכל שקף: הטקסט, מה לומר והמקורות</div></div>
+      <div class="btns"><a class="btn" href="materials/MDT-Loop-ENT-presentation-source.pdf">צפייה · <bdi>PDF</bdi></a></div>
+    </div>
+  </div>
+
+  <h2>המחקר</h2>
+  <div class="list">
+    <div class="item">
+      <div><div class="t">פרוטוקול מחקר — גרסה 1.1</div><div class="d">להגשה לוועדת הלסינקי המוסדית</div></div>
+      <div class="btns">
+        <a class="btn" href="materials/MDT-Loop-ENT-protocol-v1.1.pdf">צפייה · <bdi>PDF</bdi></a>
+        <a class="btn" href="materials/MDT-Loop-ENT-protocol-v1.1.docx" download>הורדה · <bdi>Word</bdi></a>
+      </div>
+    </div>
+    <div class="item">
+      <div><div class="t">הצעת מחקר רטרוספקטיבי — להגשה לוועדת הלסינקי</div><div class="d">מאבחנה לטיפול ראשוני, 2019–2025 · ויתור על הסכמה מדעת · 15 עמודים</div></div>
+      <div class="btns">
+        <a class="btn" href="materials/MDT-Loop-ENT-retrospective-proposal.pdf">צפייה · <bdi>PDF</bdi></a>
+        <a class="btn" href="materials/MDT-Loop-ENT-retrospective-proposal.docx" download>הורדה · <bdi>Word</bdi></a>
+      </div>
+    </div>
+    <div class="item">
+      <div><div class="t">נוהל מספר המחקר</div><div class="d">מבנה המזהה, 23 קודי האתר, כללי ההקצאה, קובץ המפתח ואימות הזהות</div></div>
+      <div class="btns">
+        <a class="btn" href="materials/MDT-Loop-ENT-study-id-sop.pdf">צפייה · <bdi>PDF</bdi></a>
+        <a class="btn" href="materials/MDT-Loop-ENT-study-id-sop.docx" download>הורדה · <bdi>Word</bdi></a>
+      </div>
+    </div>
+    <div class="item">
+      <div><div class="t">גיליון איסוף — המחקר הרטרוספקטיבי</div><div class="d">200 שורות · יומן עיכובים · טבלת הפרמטרים מ-22 המחקרים המובילים</div></div>
+      <div class="btns"><a class="btn" href="materials/MDT-Loop-ENT-retrospective-data-collection.xlsx" download>הורדה · <bdi>Excel</bdi></a></div>
+    </div>
+    <div class="item">
+      <div><div class="t">גיליון איסוף נתונים — 20 מטופלים</div><div class="d">ריק, מוכן לאיסוף · מספר מחקר נוצר אוטומטית</div></div>
+      <div class="btns"><a class="btn" href="materials/MDT-Loop-ENT-data-collection.xlsx" download>הורדה · <bdi>Excel</bdi></a></div>
+    </div>
+    <div class="item">
+      <div><div class="t">גיליון איסוף נתונים — ממולא בסימולציה</div><div class="d">20 מטופלים סינתטיים, לבדיקת החישובים</div></div>
+      <div class="btns"><a class="btn" href="materials/MDT-Loop-ENT-data-collection-simulation.xlsx" download>הורדה · <bdi>Excel</bdi></a></div>
+    </div>
+  </div>
+
+  <footer>
+    <bdi>MDT Loop · ENT</bdi> · <bdi>Beta 0.9</bdi> · פרוטוקול גרסה 1.1 · ספטמבר 2026
+  </footer>
+</main>
+</body>
+</html>

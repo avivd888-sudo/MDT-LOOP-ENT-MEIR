@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+/* Fonts are self-hosted rather than loaded from Google's CDN. Hospital
+   networks routinely block external CDNs, and a clinical application should
+   not be emitting a request to a third party on every page load. */
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/inter/800.css";
+/* Hebrew only — the Latin glyphs keep coming from Inter, which the whole
+   design was drawn on. Heebo is loaded for the characters Inter does not
+   have, which is exactly what a fallback in the stack is for. */
+@import "@fontsource/heebo/hebrew-400.css";
+@import "@fontsource/heebo/hebrew-500.css";
+@import "@fontsource/heebo/hebrew-600.css";
+@import "@fontsource/heebo/hebrew-700.css";
+@import "@fontsource/heebo/hebrew-800.css";
+@import "material-symbols/outlined.css";
+
+/* ---------------------------------------------------------------------------
+   MDT Loop design tokens.
+   Ported from the Google Stitch export so the built app stays visually
+   faithful to the approved design, then extended with the semantic clinical
+   colours the prototype needs (acuity states, loop states, MDT status).
+   --------------------------------------------------------------------------- */
+@theme {
+  --color-primary: #137fec;
+  --color-primary-hover: #1069c4;
+  --color-primary-soft: #137fec1f;
+
+  /* Surfaces (dark is the default and only shipped theme — clinical devices
+     are used in dim reading rooms and theatre corridors). */
+  --color-canvas: #101922;
+  --color-surface: #182430;
+  --color-surface-2: #1c2127;
+  --color-surface-3: #232f3d;
+  --color-line: #2b3a4a;
+  --color-line-strong: #3b4754;
+
+  --color-ink: #ffffff;
+  --color-ink-muted: #9dabb9;
+  --color-ink-faint: #637588;
+
+  /* Clinical acuity */
+  --color-urgent: #ef4444;
+  --color-urgent-soft: #ef444426;
+  --color-warn: #f59e0b;
+  --color-warn-soft: #f59e0b26;
+  --color-stable: #10b981;
+  --color-stable-soft: #10b98126;
+  --color-review: #a78bfa;
+  --color-review-soft: #a78bfa26;
+
+  --font-display: Inter, Heebo, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+/* Material Symbols ------------------------------------------------------- */
+/* The base class comes from the material-symbols package; these two rules
+   only add the fill axis used for active navigation icons. */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  vertical-align: middle;
+  user-select: none;
+}
+.material-symbols-outlined.filled {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* Scrollbars ------------------------------------------------------------- */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Right-to-left ---------------------------------------------------------- */
+/*
+ * Almost nothing is needed here, because every component was written with
+ * logical properties (ps/pe, ms/me, start/end) rather than left and right.
+ * What follows is the short list of things direction alone does not fix.
+ */
+
+/* Hebrew has no letter case, and no tradition of spaced capitals. `uppercase`
+   is a no-op on it and `tracking-wide` simply pulls the word apart, so the
+   badges that use both are neutralised rather than restyled. Unlayered, so it
+   wins against Tailwind's utility layer. */
+[dir="rtl"] .uppercase {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Glyphs that point somewhere have to point the other way. Only the ones
+   marked as directional flip: mirroring every icon would turn a magnifying
+   glass and a signature left-handed for no reason. */
+[dir="rtl"] .icon-dir {
+  transform: scaleX(-1);
+}
+
+/*
+ * A Latin run inside a Hebrew sentence.
+ *
+ * `direction: ltr` alone is not enough — the bidi algorithm still reorders the
+ * run against its Hebrew neighbours, which is how "T2N1M0" ends up rendered as
+ * "M0N1T2" beside a Hebrew word. `isolate` is the part that does the work; it
+ * takes the run out of the surrounding paragraph's bidi resolution entirely.
+ * Every clinical identifier, stage code, drug name and English term embedded in
+ * Hebrew prose gets this.
+ */
+.en {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Bare digits and punctuation next to Hebrew have the same problem: a range
+   written "3-5" reads "5-3". Handled by <Num>, which carries the isolation. */
+
+/* Focus ring — never remove it, clinicians use keyboards and shared kiosks. */
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-slide-up {
+  animation: slide-up 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-urgent-soft);
+  }
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
