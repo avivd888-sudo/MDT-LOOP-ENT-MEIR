@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
 <title>MDT Loop · ENT — דף ההדגמה</title>
 <style>
   :root {
@@ -25,8 +26,15 @@
     font: 16px/1.55 "Heebo", "Segoe UI", "Arial Hebrew", Arial, system-ui, sans-serif;
   }
   main { max-width: 760px; margin: 0 auto; padding: 32px 16px 56px; }
-  .brand { display: flex; align-items: center; gap: 12px; }
-  .brand svg { flex: none; color: var(--blue); }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  /* The mark is artwork on a pale plate, so it is framed rather than floated:
+     a light square dropped straight onto a dark page reads as a hole. */
+  .brand img {
+    flex: none; width: 56px; height: 56px; border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.28); border: 1px solid var(--line);
+  }
+  .logo-full { display: block; width: 100%; max-width: 260px; margin: 22px auto 0; border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.22); border: 1px solid var(--line); }
   h1 { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -.01em; }
   .ed { font: 700 12px/1 system-ui, sans-serif; letter-spacing: .3em; color: var(--blue); }
   .lede { color: var(--sec); margin: 14px 0 0; }
@@ -75,9 +83,7 @@
 <body>
 <main>
   <div class="brand">
-    <svg width="44" height="20" viewBox="9.5 6 45 20" fill="none" aria-hidden="true">
-      <path d="M32 16C32 6 12 6 12 16C12 26 32 26 32 16C32 6 52 6 52 16C52 26 32 26 32 16Z" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <img src="icon-192.png" alt="" width="56" height="56">
     <div>
       <h1><bdi>MDT Loop</bdi></h1>
       <div class="ed">ENT</div>
@@ -122,7 +128,7 @@
       <li>פרוטוקול המחקר גרסה 1.1 ונוהל מספר המחקר</li>
       <li>גיליון איסוף הנתונים וסדרת מספרי המחקר שהוקצתה לך</li>
       <li>מסמך אבטחת המידע לבודקי כללית</li>
-      <li>קובץ האפליקציה להרצה מקומית על מחשב כללית, בלי רשת</li>
+      <li>הקישור לאפליקציה, והסבר מה נשמר במכשיר שלך ומה לא</li>
       <li>סדרת מספרי המחקר שהוקצתה לך, ומספרי האישור לפתיחת מצב העבודה</li>
     </ul>
     <a class="ask" href="mailto:avivd888@gmail.com?subject=%D7%91%D7%A7%D7%A9%D7%AA%20%D7%92%D7%99%D7%A9%D7%94%20%E2%80%94%20MDT%20Loop%20ENT&amp;body=%D7%A9%D7%9D%20%D7%9E%D7%9C%D7%90%3A%0A%D7%AA%D7%A4%D7%A7%D7%99%D7%93%20%D7%95%D7%9E%D7%A7%D7%A6%D7%95%D7%A2%3A%0A%D7%9E%D7%97%D7%9C%D7%A7%D7%94%20%D7%95%D7%9E%D7%95%D7%A1%D7%93%3A%0A%D7%93%D7%95%D7%90%22%D7%9C%20%D7%9E%D7%95%D7%A1%D7%93%D7%99%20(%D7%9C%D7%90%20%D7%A4%D7%A8%D7%98%D7%99)%3A%0A%D7%98%D7%9C%D7%A4%D7%95%D7%9F%3A%0A%D7%9C%D7%9E%D7%94%20%D7%94%D7%92%D7%99%D7%A9%D7%94%20%D7%93%D7%A8%D7%95%D7%A9%D7%94%3A%0A%0A%D7%90%D7%A0%D7%99%20%D7%9E%D7%90%D7%A9%D7%A8%20%D7%A9%D7%9C%D7%90%20%D7%90%D7%96%D7%99%D7%9F%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9E%D7%96%D7%94%D7%99%D7%9D%20%D7%A9%D7%9C%20%D7%9E%D7%98%D7%95%D7%A4%D7%9C%D7%99%D7%9D%20%D7%9C%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA%2C%20%D7%95%D7%A9%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%94%D7%92%D7%91%D7%9C%D7%95%D7%AA%20%D7%91%D7%93%D7%A3%20%D7%94%D7%94%D7%93%D7%92%D7%9E%D7%94.%0A">שליחת בקשה בדוא״ל ←</a>
